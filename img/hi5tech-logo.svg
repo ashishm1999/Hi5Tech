@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="240" height="48" viewBox="0 0 240 48" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Hi5tech logo">
+  <defs>
+    <style>
+      .primary { fill: #0E3A46; }
+      .accent { fill: #FF5A3C; }
+      text { font-family: 'Inter', 'Saira', 'Segoe UI', Arial, sans-serif; font-weight: 800; }
+    </style>
+  </defs>
+  <g transform="translate(0,36)">
+    <text class="primary" font-size="36" y="0">Hi</text>
+  </g>
+  <g transform="translate(60,36)">
+    <text class="accent" font-size="36" y="0">5</text>
+  </g>
+  <g transform="translate(84,36)">
+    <text class="primary" font-size="36" y="0">tech</text>
+  </g>
+</svg>
+
