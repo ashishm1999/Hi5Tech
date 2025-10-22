@@ -1,30 +1,68 @@
-/* Brand overrides */
+/* ============================================
+   CENTRALIZED COLOR PALETTE
+   Update all colors here in one place
+   ============================================ */
 :root {
+    /* Primary Colors */
     --bs-primary: #0E3A46; /* Deep teal */
-    --bs-secondary: #FF5A3C; /* Hi5 accent */
+    --bs-primary-hover: #0B2C35; /* Darker teal */
+    --bs-primary-overlay: rgba(14, 58, 70, 0.85); /* Semi-transparent teal */
+
+    /* Secondary Colors */
+    --bs-secondary: #FF5A3C; /* Hi5 accent orange-red */
+    --bs-secondary-hover: #ff7a61; /* Lighter orange-red */
+    --bs-secondary-hover-alt: #ff6a51; /* Alternative hover */
+
+    /* Dark Theme - Backgrounds */
+    --bg-body: #0B0F12; /* Main body background */
+    --bg-header: #0B0F12; /* Header bar background */
+    --bg-light: #101316; /* Light background (cards, sections) */
+    --bg-testimonial: #0D1216; /* Testimonial section */
+    --bg-footer: #0A0D10; /* Footer background */
+
+    /* Dark Theme - Text Colors */
+    --text-body: #E6E6E6; /* Body text */
+    --text-heading: #F2F5F8; /* Headings */
+    --text-white-50: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
+
+    /* Accent Colors */
+    --accent-green: #26d48c; /* Contact map/form */
+
+    /* Testimonial Colors */
+    --testimonial-card: #F4F2EE; /* Light beige card */
+    --testimonial-center: #FFFFFF; /* Center card white */
+    --testimonial-text: #0E3A46; /* Dark text on light cards */
+    --testimonial-dot: #d7dfe3; /* Carousel dot */
+    --testimonial-shadow: #DDDDDD; /* Box shadow */
+}
+
+/* Brand overrides for Bootstrap */
+:root {
+    --bs-primary: #0E3A46;
+    --bs-secondary: #FF5A3C;
 }
 
 a { color: var(--bs-primary); }
-a:hover { color: #0B2C35; }
+a:hover { color: var(--bs-primary-hover); }
 
 /* Slightly tighter logo control */
 .brand-logo { height: 36px; width: auto; display: block; }
 
 /* Global dark theme */
-body { background-color: #0B0F12; color: #E6E6E6; }
-h1, h2, h3, h4, h5, h6 { color: #F2F5F8; }
+body { background-color: var(--bg-body); color: var(--text-body); }
+h1, h2, h3, h4, h5, h6 { color: var(--text-heading); }
 /* Make the header bar black while keeping primary for CTAs */
-.container-fluid.bg-primary { background-color: #0B0F12 !important; }
-.bg-light { background-color: #101316 !important; }
-.testimonial { background-color: #0D1216; }
-.footer { background-color: #0A0D10; }
+.container-fluid.bg-primary { background-color: var(--bg-header) !important; }
+.bg-light { background-color: var(--bg-light) !important; }
+.testimonial { background-color: var(--bg-testimonial); }
+.footer { background-color: var(--bg-footer); }
 
 /* Footer email contrast */
 .footer .contact-link a[href^="mailto:"] {
     color: var(--bs-secondary) !important;
 }
 .footer .contact-link a[href^="mailto:"]:hover {
-    color: #ff7a61 !important;
+    color: var(--bs-secondary-hover) !important;
 }
 
 /* Contact cards email contrast */
@@ -35,7 +73,7 @@ h1, h2, h3, h4, h5, h6 { color: #F2F5F8; }
 }
 .contact-detail a.h5:hover,
 .contact-detail a[href^="mailto:"]:hover {
-    color: #ff7a61 !important;
+    color: var(--bs-secondary-hover) !important;
 }
 
 /*** Spinner Start ***/
@@ -260,8 +298,8 @@ h1, h2, h3, h4, h5, h6 { color: #F2F5F8; }
 }
 
 .carousel-caption .carousel-content a button.carousel-content-btn1:hover {
-    background: #ff6a51;
-    color: #0B0F12;
+    background: var(--bs-secondary-hover-alt);
+    color: var(--bg-body);
     border: 0;
     opacity: 1;
     transition: 1s;
@@ -375,7 +413,7 @@ h1, h2, h3, h4, h5, h6 { color: #F2F5F8; }
     top: 0;
     left: 0;
     border-radius: 10px 10px 0 0;
-    background: rgba(14, 58, 70, 0.85);
+    background: var(--bs-primary-overlay);
     transition: .5s;
 }
 
@@ -615,8 +653,8 @@ h1, h2, h3, h4, h5, h6 { color: #F2F5F8; }
 /*** Testimonial Start ***/
 
 .testimonial-item {
-    background: #F4F2EE;
-    color: #0E3A46; /* dark text on light card */
+    background: var(--testimonial-card);
+    color: var(--testimonial-text);
 }
 
 .testimonial-carousel .owl-dots {
@@ -632,7 +670,7 @@ h1, h2, h3, h4, h5, h6 { color: #F2F5F8; }
     margin: 0 5px;
     width: 15px;
     height: 15px;
-    background: #d7dfe3;
+    background: var(--testimonial-dot);
     border-radius: 15px;
     transition: .5s;
 }
@@ -652,13 +690,13 @@ h1, h2, h3, h4, h5, h6 { color: #F2F5F8; }
 }
 
 .testimonial-carousel .owl-item.center .testimonial-item {
-    background: #FFFFFF !important;
-    color: #0E3A46; /* ensure center card has readable text */
-    box-shadow: 0 0 30px #DDDDDD;
+    background: var(--testimonial-center) !important;
+    color: var(--testimonial-text);
+    box-shadow: 0 0 30px var(--testimonial-shadow);
 }
 
 /* Improve testimonial text contrast */
-.testimonial-item p { color: #0E3A46 !important; }
+.testimonial-item p { color: var(--testimonial-text) !important; }
 .testimonial-item h4 { color: var(--bs-secondary) !important; }
 
 /*** Testimonial End ***/
@@ -679,11 +717,11 @@ h1, h2, h3, h4, h5, h6 { color: #F2F5F8; }
 }
 
 .contact-map {
-    background: #26d48c;
+    background: var(--accent-green);
 }
 
 .contact-form {
-    background: #26d48c;
+    background: var(--accent-green);
 }
 
 /*** Contact End ***/
